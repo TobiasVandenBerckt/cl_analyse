@@ -10,7 +10,9 @@ df_schoten = pd.read_csv('./ucl_data/csv/attempts.csv')
 df_goals = pd.read_csv('./ucl_data/csv/goals.csv')
 df_goals_en_attempts = pd.merge(df_schoten, df_goals, on='player_name')
 
-df = df_goals_en_attempts.head()
+#checks if the merge works and shows the 5 first rows
+# df = df_goals_en_attempts.head()
+# print(df)
 
 spelers_met_meer_dan_2_wedstrijden = (df_goals_en_attempts['position_x'] == 'Forward') & (df_goals_en_attempts['match_played_y']> 2)
 clubs = df_goals_en_attempts[spelers_met_meer_dan_2_wedstrijden]['club_x']
